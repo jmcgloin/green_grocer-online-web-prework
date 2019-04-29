@@ -3,7 +3,7 @@ def consolidate_cart(cart)
   cons_cart = {}
   cart.each do
     |item|
-    
+    if !cons_cart.key?(item.keys[0]) then cons_cart[item.keys[0]]
   binding.pry
 end
 
