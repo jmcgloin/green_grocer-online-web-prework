@@ -24,7 +24,11 @@ def apply_coupons(cart, coupons)
     if cart[item] != nil && count >= num
       cart[item << " W/COUPON"] = cart[item]
       cart[item << " W/COUPON"][:price] = cost
-      cart[item << " W/COUPON"][:count] = 
+      cart[item << " W/COUPON"][:count] = (count - count  % num) / num
+      cart[item][:count] = count % num
+    end
+  end
+  cart
   binding.pry
 end
 
