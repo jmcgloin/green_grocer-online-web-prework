@@ -17,7 +17,13 @@ end
 def apply_coupons(cart, coupons)
   coupons.each do
     |coupon|
-    if cart.keys.include?(coupon[:item]) && 
+    item = coupon[:item]
+    count = cart[coupon[:item][:count]]
+    num = coupon[:num]
+    if cart[coupon[:item]] != nil && count >= num
+      cart[item << " W/COUPON"] = {
+        :price => 
+      }
   binding.pry
 end
 
