@@ -18,16 +18,18 @@ def apply_coupons(cart, coupons)
   coupons.each do
     |coupon|
     item = coupon[:item]
-    if cart[item] != nil && count >= num
+    if cart[item] != nil
       count = cart[coupon[:item]][:count]
       num = coupon[:num]
       cost = coupon[:cost]
-      new_item = item + " W/COUPON"
-      cart[new_item] = {}
-      cart[new_item][:clearance] = cart[item][:clearance]
-      cart[new_item][:price] = cost
-      cart[new_item][:count] = (count - count  % num) / num
-      cart[item][:count] = count % num
+      if count >= num
+        new_item = item + " W/COUPON"
+        cart[new_item] = {}
+        cart[new_item][:clearance] = cart[item][:clearance]
+        cart[new_item][:price] = cost
+        cart[new_item][:count] = (count - count  % num) / num
+        cart[item][:count] = count % num
+      end
     end
   end
   cart
