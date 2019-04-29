@@ -52,7 +52,7 @@ def checkout(cart, coupons)
     |item|
     binding.pry
     qty = item.values[0][:count]
-    each = cart[item][:price]
+    each = item.values[0][:price]
     total += qty * each
   end
   total
