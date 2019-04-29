@@ -22,11 +22,11 @@ def apply_coupons(cart, coupons)
     count = cart[coupon[:item]][:count]
     num = coupon[:num]
     cost = coupon[:cost]
-    new_item = item 
+    new_item = item + " W/COUPON"
     if cart[item] != nil && count >= num
-      cart[item << " W/COUPON"] = cart[item]
-      cart[item << " W/COUPON"][:price] = cost
-      cart[item << " W/COUPON"][:count] = (count - count  % num) / num
+      cart[new_item] = cart[item]
+      cart[new_item][:price] = cost
+      cart[new_item][:count] = (count - count  % num) / num
       cart[item][:count] = count % num
     end
   end
