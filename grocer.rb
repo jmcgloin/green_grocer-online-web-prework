@@ -17,8 +17,8 @@ end
 def apply_coupons(cart, coupons)
   coupons.each do
     |coupon|
+    item = coupon[:item]
     if cart[item] != nil && count >= num
-      item = coupon[:item]
       count = cart[coupon[:item]][:count]
       num = coupon[:num]
       cost = coupon[:cost]
