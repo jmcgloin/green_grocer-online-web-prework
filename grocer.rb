@@ -37,7 +37,7 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  cart.each do
+  cart.keys.each do
     |item|
     binding.pry
     item[:price] = item[:clearance] ? 0.8 * item[:price] : item[:price]
