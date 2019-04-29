@@ -48,9 +48,9 @@ end
 def checkout(cart, coupons)
   final_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   total = 0
-  binding.pry
-  cart.keys.each do
+  cart.each do
     |item|
+    binding.pry
     qty = cart[item][:count]
     each = cart[item][:price]
     total += qty * each
