@@ -29,10 +29,9 @@ def apply_coupons(cart, coupons)
       cart[new_item][:count] = (count - count  % num) / num
       cart[item][:count] = count % num
     end
-    binding.pry
   end
   cart
-  binding.pry
+  # binding.pry
 end
 
 def apply_clearance(cart)
