@@ -17,11 +17,11 @@ end
 def apply_coupons(cart, coupons)
   coupons.each do
     |coupon|
+    if item = "AVOCADO" then binding.pry end
     item = coupon[:item]
     count = cart[coupon[:item][:count]]
     num = coupon[:num]
     cost = coupon[:cost]
-    if item = "AVOCADO" then binding.pry end
     if cart[item] != nil && count >= num
       cart[item << " W/COUPON"] = cart[item]
       cart[item << " W/COUPON"][:price] = cost
