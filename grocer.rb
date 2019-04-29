@@ -55,5 +55,5 @@ def checkout(cart, coupons)
     each = item[1][:price]
     total += qty * each
   end
-  total
+  total = total > 100 ? total * 0.9 : total
 end
