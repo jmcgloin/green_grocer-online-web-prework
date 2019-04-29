@@ -23,6 +23,7 @@ def apply_coupons(cart, coupons)
     num = coupon[:num]
     cost = coupon[:cost]
     new_item = item + " W/COUPON"
+    binding.pry
     if cart[item] != nil && count >= num
       cart[new_item] = cart[item]
       cart[new_item][:price] = cost
