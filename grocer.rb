@@ -17,7 +17,7 @@ end
 def apply_coupons(cart, coupons)
   coupons.each do
     |coupon|
-    if item = "AVOCADO" then binding.pry end
+    # if item = "AVOCADO" then binding.pry end
     item = coupon[:item]
     count = cart[coupon[:item]][:count]
     num = coupon[:num]
