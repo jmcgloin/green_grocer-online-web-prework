@@ -20,10 +20,11 @@ def apply_coupons(cart, coupons)
     item = coupon[:item]
     count = cart[coupon[:item][:count]]
     num = coupon[:num]
-    if cart[coupon[:item]] != nil && count >= num
-      cart[item << " W/COUPON"] = {
-        :price => 
-      }
+    cost = coupon[:cost]
+    if cart[item] != nil && count >= num
+      cart[item << " W/COUPON"] = cart[item]
+      cart[item << " W/COUPON"][:price] = cost
+      cart[item << " W/COUPON"][:count] = 
   binding.pry
 end
 
