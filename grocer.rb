@@ -11,6 +11,7 @@ def consolidate_cart(cart)
     end
       
   end
+  cons_cart
   # binding.pry
 end
 
