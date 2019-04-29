@@ -1,5 +1,9 @@
 require  'pry'
 def consolidate_cart(cart)
+  cons_cart = {}
+  cart.keys.each do
+    |item|
+    
   binding.pry
 end
 
