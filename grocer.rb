@@ -3,7 +3,13 @@ def consolidate_cart(cart)
   cons_cart = {}
   cart.each do
     |item|
-    if !cons_cart.key?(item.keys[0]) then cons_cart[item.keys[0]] = item.values[0] << :count => 1 end
+    if !cons_cart.key?(item.keys[0])
+      cons_cart[item.keys[0]] = item.values[0]
+      cons_cart[item.keys[0]][:count] = 1
+    else
+      cons_cart[item.keys[0]][:count] += 1
+    end
+      
   end
   binding.pry
 end
