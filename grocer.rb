@@ -50,7 +50,6 @@ def checkout(cart, coupons)
   total = 0
   cart.each do
     |item|
-    binding.pry
     qty = item.values[0][:count]
     each = item.values[0][:price]
     total += qty * each
