@@ -40,8 +40,9 @@ def apply_clearance(cart)
   cart.keys.each do
     |item|
     cart[item][:price] = cart[item][:clearance] ? (0.8 * cart[item][:price]).round(2) : cart[item][:price]
-    binding.pry
+    # binding.pry
   end
+  cart
 end
 
 def checkout(cart, coupons)
