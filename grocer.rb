@@ -40,7 +40,7 @@ def apply_clearance(cart)
   cart.keys.each do
     |item|
     binding.pry
-    item[:price] = item[:clearance] ? 0.8 * item[:price] : item[:price]
+    cart[item][:price] = cart[item][:clearance] ? 0.8 * cart[item][:price] : cart[item][:price]
   end
   binding.pry
   cart
