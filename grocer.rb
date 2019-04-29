@@ -19,7 +19,7 @@ def apply_coupons(cart, coupons)
     |coupon|
     if item = "AVOCADO" then binding.pry end
     item = coupon[:item]
-    count = cart[coupon[:item][:count]]
+    count = cart[coupon[:item]][:count]
     num = coupon[:num]
     cost = coupon[:cost]
     if cart[item] != nil && count >= num
